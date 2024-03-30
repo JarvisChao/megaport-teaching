@@ -1,0 +1,33 @@
+.l-lineup
+  &.--news
+    background-color: var(--color-primary)
+
+  &__box
+    // 解決 parallax 滑鼠不能 hover 效果
+    pointer-events: auto !important
+  &__wrap
+    display: flex !important
+    position: relative !important
+    &:nth-child(1)
+      justify-content: flex-end
+      align-items: flex-end
+    &:nth-child(4)
+      justify-content: center
+
+
+  &__article
+    display: flex
+    flex-direction: column
+    max-width: 45rem
+    filter: grayscale(100%)
+    transition: filter 0.3s
+    &:hover
+      filter: grayscale(0)
+    &.--lg
+      max-width: 56rem
+    &.--reverse
+      flex-direction: column-reverse
+      justify-content: flex-end
+
+// .l-lineup__article--lg
+// .l-lineup__article.--lg

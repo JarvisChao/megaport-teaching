@@ -1,0 +1,182 @@
+doctype html
+html(lang="en")
+  head
+    include includes/_settings.pug
+    include includes/_head.pug
+  body
+    include includes/_navbar.pug
+    
+    header.l-header(data-aos="fade")
+      .swiper.l-header__swiper
+        .swiper-wrapper
+          .swiper-slide
+            .l-header__img-mask
+              img.u-object-fit.js-lazy(data-src="img/banner/banner-img01.jpg", alt="音樂祭")
+          .swiper-slide
+            .l-header__img-mask
+              img.u-object-fit.js-lazy(data-src="img/banner/banner-img02.jpg", alt="音樂祭")
+          .swiper-slide
+            .l-header__img-mask
+              img.u-object-fit.js-lazy(data-src="img/banner/banner-img03.jpg", alt="音樂祭")
+
+    main
+      section.l-lineup.u-gradient(data-aos="fade")
+        .container
+          .u-mb-80(data-aos="fade-up")
+            h2.u-text-4xl.u-color-secondary LINEUP
+              span.u-text-lg MEGAPORT FESTIVAL
+
+          .row.--gap.l-lineup__box.js-parallax(data-input-element=".l-lineup__box")
+            .col-md-5.l-lineup__wrap(data-depth="0.1")
+              a.l-lineup__link(href="##" data-aos="fade-up" ) 
+                article.l-lineup__article
+                  h3.u-text-xl.u-mb-8 9m88
+                  .l-lineup__img-mask
+                    img.js-lazy(data-src="img/lineup/lineup01.jpg", alt="大港開唱音樂祭-9m88")
+            .col-md-7.l-lineup__wrap(data-depth="-0.1")
+              a.l-lineup__link(href="##" data-aos="fade-up" ) 
+                article.l-lineup__article.--lg
+                  h3.u-text-xl.u-mb-8 恆月三途
+                  .l-lineup__img-mask
+                    img.js-lazy(data-src="img/lineup/lineup02.jpg", alt="大港開唱音樂祭-恆月三途")
+            .col-xl-4.col-md-7.l-lineup__wrap(data-depth="-0.2")
+              a.l-lineup__link(href="##" data-aos="fade-up" ) 
+                article.l-lineup__article.--lg.--reverse
+                  h3.u-text-xl.u-mt-8 Beyound Cure
+                  .l-lineup__img-mask
+                    img.js-lazy(data-src="img/lineup/lineup03.jpg", alt="大港開唱音樂祭-Beyound Cure")
+            .col-xl-4.col-md-5.l-lineup__wrap(data-depth="-0.1")
+              a.l-lineup__link(href="##" data-aos="fade-up" ) 
+                article.l-lineup__article.--reverse
+                  h3.u-text-xl.u-mt-8 Dudu King
+                  .l-lineup__img-mask
+                    img.js-lazy(data-src="img/lineup/lineup04.jpg", alt="大港開唱音樂祭-Dudu King")
+            .col-xl-4.col-md-5.l-lineup__wrap(data-depth="-0.2")
+              a.l-lineup__link(href="##" data-aos="fade-up" ) 
+                article.l-lineup__article.--reverse
+                  h3.u-text-xl.u-mt-8 Da Wang
+                  .l-lineup__img-mask
+                    img.js-lazy(data-src="img/lineup/lineup05.jpg", alt="大港開唱音樂祭-Da Wang")
+
+      section.l-news(data-aos="fade")
+        .l-news__btn-swiper.--prev
+          iconify-icon.u-icon(icon="fa6-solid:arrow-left")
+        .l-news__btn-swiper.--next
+          iconify-icon.u-icon(icon="fa6-solid:arrow-right")
+          
+        .container
+          .u-mb-80.u-text-center(data-aos="fade-up")
+            h2.u-text-4xl.u-color-secondary NEWS
+              span.u-text-lg MEGAPORT FESTIVAL
+
+          .swiper.l-news__swiper
+            .swiper-wrapper
+              include mixins/_card.pug
+              //- pug 變數
+              //- 資料庫
+              -
+                const newsList = [
+                  {
+                    date: '2021.04.12', title: '大港 防疫公告！',
+                    content: '【入場需先填寫 Line 實聯制問卷才能兌換手環】 如何填寫實聯制...',
+                    img: 'img/news/news01.jpg', link: '##'
+                  }, {
+                    date: '2021.05.10', title: '金牌台啤x大港開唱 聯名限定上市',
+                    content: 'Untitled Document 為在地音樂乾一杯！ 金牌台啤x大港開唱聯名啤酒限定上市 高雄最具代表性的大型音樂...',
+                    img: 'img/news/news02.jpg', link: '##'
+                  }, {
+                    date: '2021.05.24', title: '大港開唱 x MegaFun',
+                    content: '✧ 好耍 ✧趣味 ✧足歡喜 大港娛樂特區MegaFun全方位手冊 . ** MEGADIVE 孤枝大夫 ** 輕鬆享受人體衝浪支...',
+                    img: 'img/news/news03.jpg', link: '##'
+                  }, {
+                    date: '2021.06.17', title: '大港帥口罩',
+                    content: '想要這個大港口罩嗎？填寫實聯制問卷就送給你 #只送不賣 #有大港單雙日票券者才可兌換...',
+                    img: 'img/news/news04.jpg', link: '##'
+                  }, {
+                    date: '2021.06.22', title: '官方周邊 正式公佈！',
+                    content: '敲破碗的大港周邊這不就來了嗎 . 定番款大港毛巾必收 漁夫帽門簾與工作衫首次登場 超搶眼...',
+                    img: 'img/news/news05.jpg', link: '##'
+                  }, {
+                    date: '2021.07.10', title: '大港線上直播 來囉！',
+                    content: '沒買到大港票的朋朋，線上直播來啦 . 大港開唱與LINE TODAY獨家合作 #南霸天、 #女神龍...',
+                    img: 'img/news/news06.jpg', link: '##'
+                  }
+                ]
+
+              - for (let i = 0; i < newsList.length; i++)
+                .swiper-slide.l-news__slide
+                  +newsCard(newsList[i])
+
+      section.l-about.u-gradient
+        .container
+          .u-mb-80(data-aos="fade-right")
+            h2.u-text-4xl.u-color-secondary ABOUT
+              span.u-text-lg MEGAPORT FESTIVAL
+
+        .container.--left
+          .row
+            .col-md-7.order-md-0.order-2(data-aos="fade-right")
+              .l-about__img-mask
+                .l-about__img(uk-parallax="bgy: -200")
+            .col-md-5.order-md-0.order-1
+              .l-about__content-wrap
+                .l-about__content.u-mb-64(data-aos="fade-up")
+                  h3.u-text-2xl.u-mb-16 2022 年即將邁入第十三屆的《大港開唱》
+                  p.u-fw-500 每年三月於高雄舉辦的大型音樂祭典，受到全台灣及日本香港年輕觀眾的喜愛，近年已成為台灣最具指標性的大型戶外音樂祭活動。
+                .l-about__content(data-aos="fade-up")
+                  h3.u-text-2xl.u-mb-16 「人生」與「音樂」
+                  p.u-fw-500 大港舉辦在高雄港邊，獨特的海港地景和人文風情，常勾起人生中各種酸甜苦辣的回憶。也因如此，大港總是邀請有著豐富人生歷程的知名藝人及業界前輩演出，也會與新一代的樂團或藝人一起合作演出，交融出世代之間的化學效應，往往成為當年度為人津津樂道的經典現場...
+                .o-btn.--right.--full.u-mt-64(data-aos="fade-up")
+                  a.o-btn__link(href="##") MORE
+
+
+    include includes/_footer.pug
+
+    
+    script(src="js/swiper.min.js")
+    script(src="js/parallax.min.js")
+    include includes/_scripts.pug
+
+    //- script 多一個點是 pug 寫 script 的方式
+    script.
+      const headerSwiper = new Swiper('.l-header__swiper', {
+        effect: 'fade',
+        // 施放距離
+        longSwipesRatio: 0.1,
+        loop: true,
+        speed: 1200,
+        autoplay: {
+          delay: 3000,
+          // 手動換頁之後停止自動輪播
+          // false 手動之後還是會自動輪播
+          disableOnInteraction: false
+        }
+      });
+
+      const newsSwiper = new Swiper('.l-news__swiper', {
+        longSwipesRatio: 0.1,
+        loop: true,
+        speed: 1200,
+        // 顯示幾個
+        slidesPerView: 'auto',
+        // 間距
+        spaceBetween: 4,
+        breakpoints: {
+          1400: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 8,
+          },
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 4,
+          },
+        },
+        navigation: {
+          prevEl: '.l-news__btn-swiper.--prev',
+          nextEl: '.l-news__btn-swiper.--next',
+        },
+      })

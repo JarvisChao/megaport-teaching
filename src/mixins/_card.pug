@@ -1,0 +1,13 @@
+mixin newsCard(data)
+  article.c-card(data-aos="fade-up")
+    span.u-text-lg.u-fw-900.c-card__date #{data.date}
+    .c-card__wrap
+      //- .u-img-ratio 等比縮放
+      a.u-img-ratio.c-card__img-mask(href=data.link)
+        //- 設定等比縮放 img 需要設 .--abs 絕對定位
+        img.u-object-fit.--abs.js-lazy(data-src=data.img, alt=data.title)
+      .c-card__body
+        h3.u-text-md #{data.title}
+        p.c-card__desc #{data.content}
+        .o-btn.--right.u-mt-auto
+          a.o-btn__link(href=data.link) MORE

@@ -1,0 +1,130 @@
+*
+  position: relative
+  box-sizing: border-box
+
+html
+  // 10px
+  font-size: calc(16px / 1.6)
+  +media(lg)
+    font-size: calc(15px / 1.6)
+  +media(ipad)
+    font-size: calc(14px / 1.6)
+
+  // @media (max-width: 1024px)
+  //   font-size: calc(14px / 1.6)
+
+// CSS
+// @media (max-width: 1024px) {
+//   html {
+//     font-size: calc(14px / 1.6)
+//   }
+// }
+
+html
+  &.lenis, &.lenis body
+    height: auto
+.lenis.lenis
+  &-smooth
+    scroll-behavior: auto !important
+  &-smooth [data-lenis-prevent]
+    overscroll-behavior: contain
+  &-stopped
+    overflow: hidden
+  &-scrolling iframe
+    pointer-events: none
+
+body
+  margin: 0
+  background-image: url(../img/bg-dots.png)
+  background-color: var(--color-gray-mid)
+  font-family: 'Noto Sans TC', sans-serif
+  font-size: 1.6rem
+  font-weight: 400
+  // 文字去毛邊，因為 IOS 文字會看起來比較糊
+  -webkit-font-smoothing: antialiased
+  letter-spacing: 0.1rem
+  line-height: 1.7
+  color: var(--color-gray-light)
+  transition: background-color 0.8s
+  &.is-news-active
+    background-image: none
+    background-color: var(--color-primary)
+
+/* ----------------------------------- */
+/* ------ Reset ------ */
+/* ----------------------------------- */
+a, button, input, label, select, textarea
+  // 防止手機雙點擊螢幕放大縮小
+  -ms-touch-action: manipulation
+  touch-action: manipulation
+
+a, button
+  display: inline-block
+  text-decoration: none
+  color: inherit
+  // 禁止文字反白
+  user-select: none
+  &:hover
+    text-decoration: none
+    color: inherit
+// a:hover
+
+button
+  padding: 0
+  border: none
+  background: none
+
+img
+  max-width: 100%
+
+ul, ol
+  list-style: none
+  padding: 0
+  margin: 0
+
+h1, h2, h3, h4, h5, h6, p, button
+  margin: 0
+  // 插件可能會影響
+  font-family: inherit
+  font-size: inherit
+  font-weight: inherit
+  line-height: inherit
+  color: inherit
+
+span
+  display: block
+  // 插件可能會影響
+  line-height: inherit
+
+/* ----------------------------------- */
+/* ------ Layouts ------ */
+/* ----------------------------------- */
+section
+  padding: var(--spacing-120) 4vw
+
+.container
+  --section-width: 100vw
+  --container-width: 152rem
+  max-width: var(--container-width)
+  &.--left
+    // 靠左並同時保有 container 最大寬特性
+    margin-left: -4vw
+    padding-left: 0
+    // 移除預設 100%，使 container 寬度不侷限在 section padding 裡
+    width: auto
+    // |----------||----------| section 寬
+    //       |----||----|       container 最大寬
+    // |----------||----|       section 寬 / 2 + container 最大寬 / 2
+    // section 一半 + container 最大寬的一半 - container 預設 padding
+    max-width: calc(var(--section-width) / 2 + var(--container-width) / 2 - var(--bs-gutter-x) * .5)
+
+.row
+  &.--gap
+    --bs-gutter-x: var(--spacing-32)
+    --bs-gutter-y: var(--spacing-32)
+  &.--gap-md
+    --bs-gutter-x: var(--spacing-40)
+    --bs-gutter-y: var(--spacing-80)
+  &.--gap-lg
+    --bs-gutter-x: var(--spacing-64)
+    --bs-gutter-y: var(--spacing-88)
